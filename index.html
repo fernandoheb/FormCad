@@ -1,208 +1,199 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Exemplo Validação + Bootstrap  + máscaras + CEP</title>
-  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
+    <meta charset="UTF-8">
+    <title>CodePen - Exemplo Validação + Bootstrap + máscaras + CEP</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<body  id='b'  class= "bg-dark">
-  <nav>
-       <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="modo">
-                    <label class="form-check-label" for="modo"> <i class="bi bi-moon"> </i>   </label>
+    <!-- partial:index.partial.html -->
+
+    <body id='b' class="bg-dark">
+        <nav>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="modo">
+                <label class="form-check-label" for="modo"> <i class="bi bi-moon"> </i> </label>
+            </div>
+        </nav>
+        <h1 id='header' class="text-center text-light"> Cadastro de Usuários</h1>
+        <main id='main' class="container bg-light p-3 px-5  rounded mt-3">
+            <!-- colocar as propriedades name -->
+            <!-- colocar os métodos no form -->
+            <form class="row g-3 needs-validation" action="http://localhost/requisicoes/?aula=DWS2" method="post" novalidate>
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">Primeiro Nome</label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Primeiro Nome" name="nome" required>
+                    <div class="valid-feedback">
+                        Tudo Certo!
+                    </div>
+                    <div class="invalid-feedback">
+                        Digite seu nome.
+                    </div>
                 </div>
-            </nav> 
-  
-  <h1  id='header'class="text-center text-light"> Cadastro de Usuários</h1>
-<main id='main' class="container bg-light p-3 px-5  rounded mt-3">
-  <!-- colocar as propriedades name -->
-  <!-- colocar os métodos no form -->
-<form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
-    <label for="validationCustom01" class="form-label">Primeiro Nome</label>
-    <input type="text" class="form-control" id="validationCustom01" placeholder="Primeiro Nome"    required>
-    <div class="valid-feedback">
-      Tudo Certo!
-    </div>
-    <div class="invalid-feedback">
-        Digite seu nome.
-      </div>
-  </div>  
-  <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Sobrenome</label>
-    <input type="text" class="form-control" id="validationCustom02" Placeholder="Sobrenome" required>
-    <div class="valid-feedback">
-      Fechou!
-    </div>
-    <div class="invalid-feedback">
-        Digite seu sobrenome.
-      </div>
-    
-  </div>
-  <div class="col-md-3">
-    <label for="validationCustom01" class="form-label">CPF</label>
-    <input type="text" class="form-control" id="txtCPF" maxlength="14"  size="14" pattern="[0-9]{3}.[0-9]{3}-[0-9]{3}" placeholder="xxx.xxx.xxx-xxx"    required>
-    <div class="valid-feedback">
-      Tudo Certo!
-    </div>
-    <div class="invalid-feedback">
-        Digite seu nome.
-      </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationCustomUsername" class="form-label">Usuário</label>
-    <div class="input-group has-validation">
-      <span class="input-group-text" id="inputGroupPrepend">@</span>
-      <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-      <div class="valid-feedback">
-      Suave!
-    </div>
-    <div class="invalid-feedback">
-        Por favor escolha um usuário (email).
-      </div>
-      
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationCustomUsername" class="form-label">Telefone</label>
-    <div class="input-group has-validation">
-      <span class="input-group-text" id="inputGroupPrepend">Cel</span>
-      <input type="tel" class="form-control" placeholder="(00)99999-9999" maxlength="15" id="txtCEL" aria-describedby="inputGroupPrepend" required>
-      <div class="valid-feedback">
-      Suave!
-    </div>
-    <div class="invalid-feedback">
-        Por favor escolha um usuário (email).
-      </div>
-      
-    </div>
-  </div>
-  <div class="col-md-3">
-    <label for="validationCustom05" class="form-label">CEP</label>
-    <input type="text" class="form-control"  onblur="pesquisacep(this.value);" id="cep" maxlenght="9" placeholder="00000-000" required>
-    <div class="valid-feedback">
-      Ok!
-    </div>
-    <div class="invalid-feedback">
-    Por favor informe um CEP.
-    </div>
-  </div>
-   <div class="col-md-6">
-    <label for="rua" class="form-label">Rua</label>
-    <input type="text" class="form-control" id="rua" size="60" required>
-    <div class="valid-feedback">
-      Belê!
-    </div>
-    <div class="invalid-feedback">
-      Por favor informe sua rua.
-    </div>
-  </div><div class="col-md-2">
-    <label for="numero" class="form-label">Numero</label>
-    <input type="text" class="form-control" id="numero" required>
-    <div class="valid-feedback">
-      Belê!
-    </div>
-    <div class="invalid-feedback">
-      Por favor informe o número de sua residência.
-    </div>
-  </div>
-  <div class="col-md-3">
-    <label for="bairro" class="form-label">Bairro</label>
-    <input type="text" class="form-control" id="bairro" size="40" required>
-    <div class="valid-feedback">
-      Belê!
-    </div>
-    <div class="invalid-feedback">
-      Por favor informe sua bairro.
-    </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationCustom03" class="form-label">Cidade</label>
-    <input type="text" class="form-control" id="cidade" size="40" required>
-    <div class="valid-feedback">
-      Belê!
-    </div>
-    <div class="invalid-feedback">
-      Por favor informe sua cidade.
-    </div>
-  </div>
-  <div class="col-md-2">
-    <label for="uf" class="form-label">Estado</label>
-   <input type="text" class="form-control" id="uf" size="2" required>
-    <div class="valid-feedback">
-      Show!
-    </div>
-    <div class="invalid-feedback">
-      Por favor selecione um estado válido.
-    </div>
-  </div>
-  
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-       Concordo com os termos e condições
-      </label>
-      <div class="invalid-feedback">
-        Você precisa concordar antes de enviar.
-      </div>
-    </div>
-  </div>
-    
-  
-  
-  
-  
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">enviar</button>
-     <button class="btn btn-warning" type="reset">cancelar</button>
-  </div>
-</form>
-</main>
-  <script>
-    window.onload = function(){ // FUNCAO QUE É ACIONADO AO CARREGAR A PAGINA ( WINDOW.ONLOAD )
-      
-var btnModoNoturno = document.getElementById('modo');
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="validationCustom02" Placeholder="Sobrenome" name="sobrenome" required>
+                    <div class="valid-feedback">
+                        Fechou!
+                    </div>
+                    <div class="invalid-feedback">
+                        Digite seu sobrenome.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="txtCPF" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="txtCPF" maxlength="14" size="14" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" placeholder="xxx.xxx.xxx-xxx" name="cpf" required>
+                    <div class="valid-feedback">
+                        Tudo Certo!
+                    </div>
+                    <div class="invalid-feedback">
+                        Digite seu CPF.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustomUsername" class="form-label">Usuário</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="email" required>
+                        <div class="valid-feedback">
+                            Suave!
+                        </div>
+                        <div class="invalid-feedback">
+                            Por favor escolha um usuário (email).
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="txtCEL" class="form-label">Telefone</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">Cel</span>
+                        <input type="tel" class="form-control" placeholder="(00)99999-9999" maxlength="15" id="txtCEL" aria-describedby="inputGroupPrepend" name="telefone" required>
+                        <div class="valid-feedback">
+                            Suave!
+                        </div>
+                        <div class="invalid-feedback">
+                            Por favor escolha um usuário (email).
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" class="form-control" onblur="pesquisacep(this.value);" id="cep" maxlenght="9" placeholder="00000-000" name="cep" required>
+                    <div class="valid-feedback">
+                        Ok!
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor informe um CEP.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="rua" class="form-label">Rua</label>
+                    <input type="text" class="form-control" id="rua" size="60" name="rua" readonly>
+                    <div class="valid-feedback">
+                        Belê!
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor informe sua rua.
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label for="numero" class="form-label">Numero</label>
+                    <input type="text" class="form-control" id="numero" name="numero" required>
+                    <div class="valid-feedback">
+                        Belê!
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor informe o número de sua residência.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="bairro" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" size="40" name="bairro" readonly>
+                    <div class="valid-feedback">
+                        Belê!
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor informe sua bairro.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom03" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" size="40" name="cidade" readonly>
+                    <div class="valid-feedback">
+                        Belê!
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor informe sua cidade.
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label for="uf" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="uf" size="2" name="estado" readonly>
+                    <div class="valid-feedback">
+                        Show!
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor selecione um estado válido.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Concordo com os termos e condições
+                        </label>
+                        <div class="invalid-feedback">
+                            Você precisa concordar antes de enviar.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">enviar</button>
+                    <button class="btn btn-warning" type="reset">cancelar</button>
+                </div>
+            </form>
+        </main>
+        <script>
+        window.onload = function() { // FUNCAO QUE É ACIONADO AO CARREGAR A PAGINA ( WINDOW.ONLOAD )
 
-    btnModoNoturno.onclick = function() {
-      document.getElementById('b').classList.toggle("bg-dark");
+            var btnModoNoturno = document.getElementById('modo');
 
-       var body = document.getElementById('b');
-       var h1 = document.getElementById('header');
-       var main = document.getElementById('main');
-      
-          body.classList.toggle("text-light");
-          h1.classList.toggle("text-dark");
-          main.classList.toggle("text-light");
-          main.classList.toggle("bg-dark");      
-    }
-      
-      
-      
-	id('txtCPF').onkeyup = function(){ 
-		mascara( this, mcpf)
-	}
-  
-  id('cep').onkeyup = function(){ 
-		mascara( this, mcep)
-	}
-  id('txtCEL').onkeyup = function(){ 
-		mascara( this, mtel)
-	}
-	
-}
-    
-  </script>
-  
+            btnModoNoturno.onclick = function() {
+                document.getElementById('b').classList.toggle("bg-dark");
+
+                var body = document.getElementById('b');
+                var h1 = document.getElementById('header');
+                var main = document.getElementById('main');
+
+                body.classList.toggle("text-light");
+                h1.classList.toggle("text-dark");
+                main.classList.toggle("text-light");
+                main.classList.toggle("bg-dark");
+            }
+
+
+
+            id('txtCPF').onkeyup = function() {
+                mascara(this, mcpf)
+            }
+
+            id('cep').onkeyup = function() {
+                mascara(this, mcep)
+            }
+            id('txtCEL').onkeyup = function() {
+                mascara(this, mtel)
+            }
+
+        }
+        </script>
+    </body>
+    <!-- partial -->
+    <script src="./script.js"></script>
 </body>
-<!-- partial -->
-  <script  src="./script.js"></script>
 
-</body>
 </html>
